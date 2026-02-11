@@ -1,0 +1,6 @@
+print("Hello Python Programming..!")
+print(10,20,30)
+print("-------")
+print()
+print()
+print("----")
