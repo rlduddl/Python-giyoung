@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>전국 주요 도시 날씨</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: linear-gradient(135deg, #e0f2ff, #f9fbff);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background: #4da3ff;
+            color: white;
+            padding: 14px;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 14px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+            font-size: 15px;
+        }
+
+        tr:hover {
+            background-color: #f5faff;
+            transition: 0.3s;
+        }
+
+        .icon {
+            font-size: 1.4rem;
+        }
+
+        .temp {
+            font-weight: 600;
+            color: #ff5722;
+        }
+
+        @media (max-width: 600px) {
+            table {
+                font-size: 13px;
+            }
+            th, td {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>🌤 전국 주요 도시 날씨</h2>
+
+    <div class="card">
+        <table>
+            <tr>
+                <th>도시</th>
+                <th>날씨</th>
+                <th>기온 (°C)</th>
+            </tr>
+
+            {% for w in weathers %}
+            <tr>
+                <td>{{ w.city }}</td>
+                <td class="icon">{{ w.icon }} {{ w.wf }}</td>
+                <td class="temp">{{ w.temp }}</td>
+            </tr>
+            {% endfor %}
+
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
